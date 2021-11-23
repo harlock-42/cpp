@@ -17,7 +17,8 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_DIR = ./
 SRCS +=		main.cpp
-SRCS +=		phone_book.cpp
+SRCS +=		phone_book.class.cpp
+SRCS +=		contact.class.cpp
 
 # HEADERS =	Bureaucrat.hpp
 
