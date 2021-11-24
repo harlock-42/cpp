@@ -65,7 +65,8 @@ void	Contact::display( int index ) const
 {
 	std::string i = std::to_string(index);
 	std::cout << Contact::fix(i) << "|";
-	std::cout << Contact::fix(Contact::first_name) << "|";
-	std::cout << Contact::fix(Contact::last_name) << "|";
-	std::cout << Contact::fix(Contact::nickname) << std::endl;
+	std::cout << Contact::fix(this->first_name) << "|";
+	std::cout << Contact::fix(this->last_name) << "|";
+	std::cout << Contact::fix(this->nickname) << std::endl;
+	std::cout.flush();
 }
