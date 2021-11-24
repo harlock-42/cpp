@@ -1,14 +1,14 @@
 #include "header.hpp"
+#include <ios>
+#include <limits>
 
 Contact::Contact( void )
 {
-	std::cout << "Contact is build" << std::endl;
 	return ;
 }
 
 Contact::~Contact( void )
 {
-	std::cout << "Contact is destroyed" << std::endl;
 	return ;
 }
 
@@ -63,6 +63,9 @@ std::string Contact::fix(std::string str) const
 
 void	Contact::display( int index ) const
 {
-	std::ostringstream convert;
-	std::cout << index << std::endl;
+	std::string i = std::to_string(index);
+	std::cout << Contact::fix(i) << "|";
+	std::cout << Contact::fix(Contact::first_name) << "|";
+	std::cout << Contact::fix(Contact::last_name) << "|";
+	std::cout << Contact::fix(Contact::nickname) << std::endl;
 }
