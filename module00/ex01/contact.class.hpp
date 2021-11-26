@@ -18,7 +18,9 @@ class Contact
 		void setdata( void );
 		std::string getdata( std::string const str) const;
 		std::string fix( std::string str ) const;
+		void clear( void );
 		void display( int index ) const;
+		void display_full( void ) const;
 };
 
 #endif

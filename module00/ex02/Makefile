@@ -17,8 +17,11 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_DIR = ./
 SRCS +=		main.cpp
-SRCS +=		phone_book.class.cpp
-SRCS +=		contact.class.cpp
+SRCS += 	Account.cpp
+SRCS +=		tests.cpp
+
+# HEADERS =	Bureaucrat.hpp
+
 
 OBJS_DIR 	= 	.obj/
 OBJ 		= 	$(SRCS:.cpp=.o)

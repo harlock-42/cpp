@@ -1,6 +1,4 @@
 #include "header.hpp"
-#include <ios>
-#include <limits>
 
 Contact::Contact( void )
 {
@@ -15,15 +13,15 @@ Contact::~Contact( void )
 void	Contact::setdata( void )
 {
 	std::cout << "First Name: ";
-	std::cin >> this->first_name;
+	std::getline(std::cin, this->first_name);
 	std::cout << "Last Name: ";
-	std::cin >> this->last_name;
+	std::getline(std::cin, this->last_name);
 	std::cout << "Nickname: ";
-	std::cin >> this->nickname;
+	std::getline(std::cin, this->nickname);
 	std::cout << "Phone Number: ";
-	std::cin >> this->phone_number;
+	std::getline(std::cin, this->phone_number);
 	std::cout << "Darkest Secret: ";
-	std::cin >> this->darkest_secret;
+	std::getline(std::cin, this->darkest_secret);
 	return ;
 }
 
@@ -40,6 +38,16 @@ std::string	Contact::getdata(std::string const str) const
 	if (str.compare("darkest_secret") == 0)
 		return this->darkest_secret;
 	return "";
+}
+
+void		Contact::clear( void )
+{
+	this->first_name.clear();
+	this->last_name.clear();
+	this->nickname.clear();
+	this->phone_number.clear();
+	this->darkest_secret.clear();
+	return ;
 }
 
 std::string Contact::fix(std::string str) const
@@ -69,4 +77,12 @@ void	Contact::display( int index ) const
 	std::cout << Contact::fix(this->last_name) << "|";
 	std::cout << Contact::fix(this->nickname) << std::endl;
 	std::cout.flush();
+}
+
+void	Contact::display_full( void ) const
+{
+	std::cout << "First name : " << this->first_name << std::endl;
+	std::cout << "Last name : " << this->last_name << std::endl;
+	std::cout << "Nickename : " << this->nickname << std::endl;
+	std::cout << "Phone number : " << this->phone_number << std::endl;
 }
