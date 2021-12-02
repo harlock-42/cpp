@@ -26,14 +26,15 @@ std::string		get_str_from_file(char *path_file)
 
 int		main(int argc, char **argv)
 {
-	Replace();
-	std::string	str;
+
 	if (argc != 4)
 	{
 		std::cout << "Error: wrong number of arguments" << std::endl;
 		return (1);
 	}
-	str = get_str_from_file(argv[1]);
+	Replace rep = Replace();
+	std::string str = rep.getFile(argv[1]);
 	std::cout << str << std::endl;
+	rep.replace(argv[2], argv[3]);
 	return (0);
 }
