@@ -2,12 +2,21 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int		main()
+int main()
 {
-	// Weapon weapon = Weapon("knife");
-	// std::string const &type_ref = weapon.getType();
-	// std::cout << type_ref << std::endl;
-	HumanA();
-	HumanB();
-	return (0);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }
