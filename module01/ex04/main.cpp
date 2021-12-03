@@ -33,8 +33,8 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	Replace rep = Replace();
-	std::string str = rep.getFile(argv[1]);
-	std::cout << str << std::endl;
+	rep.getFile(argv[1]);
 	rep.replace(argv[2], argv[3]);
+	rep.toFile();
 	return (0);
 }

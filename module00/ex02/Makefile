@@ -16,7 +16,6 @@ CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_DIR = ./
-SRCS +=		main.cpp
 SRCS += 	Account.cpp
 SRCS +=		tests.cpp
 

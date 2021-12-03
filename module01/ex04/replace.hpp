@@ -8,6 +8,7 @@ class Replace
 	private:
 
 		std::string	_buffer;
+		std::string _path_file;
 		int			_ret;
 
 	public:
@@ -16,6 +17,8 @@ class Replace
 		~Replace( void );
 		std::string	getFile(char *path_file);
 		void		replace(std::string s1, std::string s2);
+		void		toFile( void ) const;
+		std::string	getBuffer( void ) const;
 };
 
 #endif

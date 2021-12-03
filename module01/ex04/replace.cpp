@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-Replace::Replace( void ) : _buffer(""), _ret(True)
+Replace::Replace( void ) : _buffer(""), _path_file(""), _ret(True)
 {
 	(void)_ret;
 	(void)_buffer;
@@ -24,6 +24,7 @@ std::string	Replace::getFile(char *path_file)
 		this->_ret = False;
 		return ("");
 	}
+	this->_path_file = path_file;
 	ifs.seekg(0, ifs.end);
 	len = ifs.tellg();
 	ifs.seekg(0, ifs.beg);
@@ -40,7 +41,31 @@ std::string	Replace::getFile(char *path_file)
 
 void		Replace::replace(std::string s1, std::string s2)
 {
-	(void)s1;
+	std::size_t	len = s1.length();
+	std::size_t	pos = 0;
 	(void)s2;
+
+	while ((pos = this->_buffer.find(s1, pos)) != std::string::npos)
+	{
+		this->_buffer.erase(pos, len);
+		this->_buffer.insert(pos, s2);
+	}
 	return ;
+}
+
+void		Replace::toFile( void ) const
+{
+	std::string			ext = ".replace";
+	std::string			path_file = this->_path_file;
+
+	path_file.append(ext);
+	std::ofstream	outfile(path_file);
+	outfile << this->_buffer << std::endl;
+	outfile.close();
+	return ;
+}
+
+std::string	Replace::getBuffer( void ) const
+{
+	return (this->_buffer);
 }
