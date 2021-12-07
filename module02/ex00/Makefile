@@ -10,16 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombieHorde
+NAME = fixed
 
 CC = clang++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_DIR = ./
-SRCS	+=		main.cpp
-SRCS	+=		zombie.cpp
-SRCS	+=		ZombieHorde.cpp
+SRCS +=		main.cpp
+SRCS +=		Fixed.cpp
+
 
 OBJS_DIR 	= 	.obj/
 OBJ 		= 	$(SRCS:.cpp=.o)

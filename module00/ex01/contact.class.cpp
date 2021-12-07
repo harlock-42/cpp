@@ -60,7 +60,7 @@ std::string Contact::fix(std::string str) const
 			space.append(" ");
 		space.append(str);
 		str = space;
-	}	
+	}
 	else
 	{
 		str.resize(9);
@@ -71,8 +71,7 @@ std::string Contact::fix(std::string str) const
 
 void	Contact::display( int index ) const
 {
-	std::string i = std::to_string(index);
-	std::cout << Contact::fix(i) << "|";
+	std::cout << "         " << index << "|";
 	std::cout << Contact::fix(this->first_name) << "|";
 	std::cout << Contact::fix(this->last_name) << "|";
 	std::cout << Contact::fix(this->nickname) << std::endl;
