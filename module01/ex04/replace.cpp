@@ -2,8 +2,6 @@
 
 Replace::Replace( void ) : _buffer(""), _path_file(""), _ret(True)
 {
-	(void)_ret;
-	(void)_buffer;
 	return ;
 }
 
@@ -42,10 +40,10 @@ std::string	Replace::getFile(char *path_file)
 void		Replace::replace(std::string s1, std::string s2)
 {
 	std::size_t	len = s1.length();
-	std::size_t	pos = 0;
+	std::size_t	pos = -1;
 	(void)s2;
 
-	while ((pos = this->_buffer.find(s1, pos)) != std::string::npos)
+	while ((pos = this->_buffer.find(s1, pos + 1)) != std::string::npos)
 	{
 		this->_buffer.erase(pos, len);
 		this->_buffer.insert(pos, s2);
