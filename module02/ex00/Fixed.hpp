@@ -9,7 +9,7 @@ class Fixed
 	private:
 
 		int					_value;
-		static	const	int	_binary_point = 8;
+		int	static	const	_binary_point;
 
 	public:
 
