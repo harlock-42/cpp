@@ -138,13 +138,20 @@ int main(void)
 	std::cout << "++a = " << ++a << std::endl;
 	std::cout << "a++ = " << a++ << std::endl;
 	std::cout << "a = " << a << std::endl;
+	std::cout << "--a = " << --a << std::endl;
+	std::cout << "a-- = " << a-- << std::endl;
+	std::cout << "a = " << a << std::endl;
 
-	// min
+	// min max
 
 	std::cout << std::endl;
 	
 	std::cout << "Fixed::min(Fixed(1), Fixed(2.5))" << std::endl;
 	std::cout << Fixed::min(Fixed(1), Fixed(2.5f)) << std::endl;
+	std::cout << "Fixed::max(Fixed(1), Fixed(2.5))" << std::endl;
+	std::cout << Fixed::max(Fixed(1), Fixed(2.5f)) << std::endl;
+
+	
 
 
 

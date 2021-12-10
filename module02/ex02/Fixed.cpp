@@ -102,10 +102,23 @@ Fixed	&Fixed::operator++( void )
 	return (*this);
 }
 
+Fixed	&Fixed::operator--( void )
+{
+	this->_value--;
+	return (*this);
+}
+
 Fixed	Fixed::operator++( int )
 {
 	Fixed	temp = *this;
 	++*this;
+	return temp;
+}
+
+Fixed	Fixed::operator--( int )
+{
+	Fixed	temp = *this;
+	--*this;
 	return temp;
 }
 
@@ -142,9 +155,23 @@ Fixed	const		&Fixed::min( Fixed const &lhs, Fixed const &rhs )
 	return (rhs);
 }
 
-Fixed	const		&Fixed::min( Fixed const &lhs, Fixed const &rhs )
+Fixed	const		&Fixed::max( Fixed const &lhs, Fixed const &rhs )
+{
+	if (lhs.toFloat() > rhs.toFloat())
+		return (lhs);
+	return (rhs);
+}
+
+Fixed				&Fixed::min( Fixed &lhs, Fixed &rhs )
 {
 	if (lhs.toFloat() < rhs.toFloat())
+		return (lhs);
+	return (rhs);
+}
+
+Fixed				&Fixed::max( Fixed &lhs, Fixed &rhs )
+{
+	if (lhs.toFloat() > rhs.toFloat())
 		return (lhs);
 	return (rhs);
 }
