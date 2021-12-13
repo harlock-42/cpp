@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name + "_clap_name"), _name(name)
 {
 	this->ClapTrap::setHitPoints(100);
 	this->ClapTrap::setEnergyPoints(50);
@@ -48,6 +48,12 @@ ScavTrap	&ScavTrap::operator=( ScavTrap const &rhs )
 
 void	ScavTrap::guardGate( void ) const
 {
-	std::cout << this->ClapTrap::getName() << " is now keeping the gate" << std::endl;
+	std::cout << this->_name << " is now keeping the gate" << std::endl;
 	return ;
+}
+
+void	ScavTrap::attack( std::string const &target )
+{
+	std::cout << "ScavTrap " << this->_name << " attack " << target << ", causing " \
+	<< this->getAttackDammage() << " points of damage !" << std::endl;
 }

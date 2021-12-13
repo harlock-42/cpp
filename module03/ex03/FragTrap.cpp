@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( std::string name ) : ClapTrap(name)
+FragTrap::FragTrap( std::string name ) : ClapTrap(name + "_clap_name"), _name(name)
 {
 	this->ClapTrap::setHitPoints(100);
 	this->ClapTrap::setEnergyPoints(100);
@@ -48,6 +48,6 @@ FragTrap	&FragTrap::operator=( FragTrap const &rhs )
 
 void	FragTrap::highFiveGuys( void ) const
 {
-	std::cout << this->ClapTrap::getName() << " gives five to his new friend !" << std::endl;
+	std::cout << this->_name << " gives five to his new friend !" << std::endl;
 	return ;
 }
