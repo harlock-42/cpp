@@ -10,9 +10,9 @@
 ** Constructor
 */
 
-Dog::Dog( void ) : Animal("Dog")
+Dog::Dog( void ) : Animal("Dog"), _brain( new Brain())
 {
-	std::cout << "It's a Dog !" << std::endl;
+	std::cout << GREEN << "The mad scientist transplant a brain in a Dog" << NC << std::endl;
 	return ;
 }
 
@@ -32,7 +32,8 @@ Dog::Dog( Dog const &rhs ) : Animal(rhs)
 
 Dog::~Dog( void )
 {
-	std::cout << "It was a Dog..." << std::endl;
+	delete this->_brain;
+	std::cout << RED << "The Dog dies... with his fake brain !" << NC << std::endl;
 	return ;
 }
 

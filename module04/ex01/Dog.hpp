@@ -2,9 +2,15 @@
 # define DOG_H
 
 #include "Animal.hpp"
+#include "Brain.hpp"
+#include "color.hpp"
 
 class Dog : public Animal
 {
+	private:
+
+		Brain	*_brain;
+
 	public:
 
 		Dog( void );

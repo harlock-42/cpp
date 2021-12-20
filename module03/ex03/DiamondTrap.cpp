@@ -19,6 +19,18 @@ DiamondTrap::DiamondTrap( DiamondTrap const &src ) : ClapTrap(src), ScavTrap(src
 	*this = src;
 }
 
+DiamondTrap	&DiamondTrap::operator=( DiamondTrap const &rhs )
+{
+	this->_name = rhs._name;
+	this->ClapTrap::setName(rhs.ClapTrap::getName());
+	this->ClapTrap::setHitPoints(rhs.ClapTrap::getHitPoints());
+	this->ClapTrap::setEnergyPoints(rhs.ClapTrap::getEnergyPoints());
+	this->ClapTrap::setAttackDammage(rhs.ClapTrap::getAttackDammage());
+	this->ScavTrap::setName(rhs.ScavTrap::getName());
+	this->FragTrap::setName(rhs.FragTrap::getName());
+	return (*this);
+}
+
 /*
 ** ----------------------
 ** --- ACTION METHODS ---

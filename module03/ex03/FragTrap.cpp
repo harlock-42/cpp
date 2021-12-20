@@ -41,6 +41,25 @@ FragTrap	&FragTrap::operator=( FragTrap const &rhs )
 }
 
 /*
+** getter
+*/
+
+std::string	FragTrap::getName( void ) const
+{
+	return (this->_name);
+}
+
+/*
+** setter
+*/
+
+void	FragTrap::setName( std::string name )
+{
+	this->_name = name;
+	return ;
+}
+
+/*
 ** -----------------------
 ** --- ACTIONS METHODS ---
 ** -----------------------

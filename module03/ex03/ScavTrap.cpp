@@ -41,6 +41,26 @@ ScavTrap	&ScavTrap::operator=( ScavTrap const &rhs )
 }
 
 /*
+** getter
+*/
+
+
+std::string	ScavTrap::getName( void ) const
+{
+	return (this->_name);
+}
+
+/*
+** setter
+*/
+
+void	ScavTrap::setName( std::string name )
+{
+	this->_name = name;
+	return ;
+}
+
+/*
 ** -----------------------
 ** --- ACTIONS METHODS ---
 ** -----------------------

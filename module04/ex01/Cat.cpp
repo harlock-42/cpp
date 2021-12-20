@@ -10,9 +10,9 @@
 ** Constructor
 */
 
-Cat::Cat( void ) : Animal("Cat")
+Cat::Cat( void ) : Animal("Cat"), _brain(new Brain())
 {
-	std::cout << "It's a cat !" << std::endl;
+	std::cout << GREEN << "The mad scientist transplant a brain in a Cat" << NC << std::endl;
 	return ;
 }
 
@@ -32,7 +32,8 @@ Cat::Cat( Cat const &rhs ) : Animal(rhs)
 
 Cat::~Cat( void )
 {
-	std::cout << "It was a cat..." << std::endl;
+	delete this->_brain;
+	std::cout << RED << "The Cat dies... with his fake brain !" << NC << std::endl;
 	return ;
 }
 

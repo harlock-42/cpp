@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include "color.hpp"
 
 class Animal
 {

@@ -20,8 +20,8 @@ SRCS_DIR = ./
 SRCS +=		main.cpp
 SRCS +=		Dog.cpp
 SRCS +=		Cat.cpp
-SRCS +=		Animal.cpp
-SRCS +=		Brain.cpp
+SRCS +=		AAnimal.cpp
+# SRCS +=		Brain.cpp
 
 
 

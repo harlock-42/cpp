@@ -14,6 +14,9 @@ class FragTrap : virtual public ClapTrap
 		FragTrap( std::string name );
 		~FragTrap( void );
 
+		std::string	getName( void ) const;
+		void		setName( std::string name );
+
 		FragTrap( FragTrap const &src );
 		FragTrap	&operator=( FragTrap const &rhs );
 		

@@ -2,9 +2,15 @@
 # define CAT_H
 
 #include "Animal.hpp"
+#include "Brain.hpp"
+#include "color.hpp"
 
 class Cat : public Animal
 {
+	private:
+	
+		Brain	*_brain;
+
 	public:
 
 		Cat( void );
