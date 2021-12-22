@@ -6,7 +6,7 @@
 #    By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 10:45:35 by tallaire          #+#    #+#              #
-#    Updated: 2021/12/10 10:00:50 by tallaire         ###   ########.fr        #
+#    Updated: 2021/12/22 17:17:29 by tallaire         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS +=		main.cpp
 SRCS +=		Dog.cpp
 SRCS +=		Cat.cpp
 SRCS +=		AAnimal.cpp
-# SRCS +=		Brain.cpp
+SRCS +=		Brain.cpp
 
 
 

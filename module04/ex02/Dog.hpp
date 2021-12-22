@@ -5,6 +5,7 @@
 # include <iostream>
 # include "color.hpp"
 # include "AAnimal.hpp"
+# include "Brain.hpp"
 
 
 class Dog
@@ -12,6 +13,7 @@ class Dog
 	private:
 
 		std::string _type;
+		Brain		*_brain;
 
 	public:
 

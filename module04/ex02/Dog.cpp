@@ -10,7 +10,7 @@
 ** Constructor by default
 */
 
-Dog::Dog( void ) : _type("Dog")
+Dog::Dog( void ) : _type("Dog"), _brain(new Brain())
 {
 	std::cout << GREEN << "Dog constructor called" << NC << std::endl;
 	return ;
@@ -44,6 +44,7 @@ Dog	&Dog::operator=( Dog const &rhs)
 
 Dog::~Dog( void )
 {
+	delete	_brain;
 	std::cout << RED << "Dog destructor called" << NC << std::endl;
 	return ;
 }

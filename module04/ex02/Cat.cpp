@@ -10,7 +10,7 @@
 ** Constructor by default
 */
 
-Cat::Cat( void ) : _type("Cat")
+Cat::Cat( void ) : _type("Cat"), _brain(new Brain())
 {
 	std::cout << GREEN << "Cat constructor called" << NC << std::endl;
 	return ;
@@ -20,7 +20,7 @@ Cat::Cat( void ) : _type("Cat")
 ** Constructor by copie
 */
 
-Cat::Cat( Cat const &src )
+Cat::Cat( Cat const &src ) : AAnimal()
 {
 	std::cout << GREEN << "Cat copie constructor called" << NC << std::endl;
 	*this = src;
@@ -44,6 +44,7 @@ Cat	&Cat::operator=( Cat const &rhs)
 
 Cat::~Cat( void )
 {
+	delete	_brain;
 	std::cout << RED << "Cat destructor called" << NC << std::endl;
 	return ;
 }
