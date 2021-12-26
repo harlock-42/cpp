@@ -19,6 +19,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS_DIR = ./
 SRCS +=		main.cpp
 SRCS +=		AMateria.cpp
+SRCS +=		Ice.cpp
 
 OBJS_DIR 	= 	.obj/
 OBJ 		= 	$(SRCS:.cpp=.o)

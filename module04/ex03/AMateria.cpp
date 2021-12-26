@@ -51,3 +51,55 @@ AMateria::~AMateria( void )
 /*
 ** ----------------------
 */
+
+/*
+** Constructor
+*/
+
+AMateria::AMateria( std::string type ) : _type(type)
+{
+	return ;
+}
+
+/*
+** --------------
+** --- Getter ---
+** --------------
+*/
+
+std::string const &AMateria::getType( void ) const
+{
+	return (this->_type);
+}
+
+/*
+** --------------
+*/
+
+/*
+** --------------
+** --- Setter ---
+** --------------
+*/
+
+void	AMateria::setType( std::string type )
+{
+	this->_type = type;
+	return ;
+}
+
+/*
+** --------------
+*/
+
+/*
+** ----------------------
+** --- ACTION METHODS ---
+** ----------------------
+*/
+
+
+
+/*
+** ----------------------
+*/

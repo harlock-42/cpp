@@ -20,6 +20,22 @@ class AMateria
 		AMateria	&operator=( AMateria const &rhs );
 		~AMateria( void );
 
+		// Constructor
+
+		AMateria( std::string type );
+
+		// Getter
+
+		std::string	const	&getType( void ) const;
+
+		// setter
+
+		void	setType( std::string type);
+
+		// Action Methods
+
+		virtual	AMateria	*clone( void ) const = 0;
+
 };
 
 #endif
