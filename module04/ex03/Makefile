@@ -6,7 +6,7 @@
 #    By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 10:45:35 by tallaire          #+#    #+#              #
-#    Updated: 2021/12/23 16:38:17 by tallaire         ###   ########.fr        #
+#    Updated: 2021/12/27 17:32:35 by tallaire         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,11 @@ SRCS_DIR = ./
 SRCS +=		main.cpp
 SRCS +=		AMateria.cpp
 SRCS +=		Ice.cpp
+SRCS +=		Cure.cpp
+SRCS +=		ICharacter.cpp
+SRCS +=		Character.cpp
+SRCS +=		IMateriaSource.cpp
+SRCS +=		MateriaSource.cpp
 
 OBJS_DIR 	= 	.obj/
 OBJ 		= 	$(SRCS:.cpp=.o)

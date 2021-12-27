@@ -4,7 +4,10 @@
 # include <string>
 # include <iostream>
 
-#include "color.hpp"
+# include "ICharacter.hpp"
+# include "color.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -18,7 +21,7 @@ class AMateria
 		AMateria( void );
 		AMateria( AMateria const &src );
 		AMateria	&operator=( AMateria const &rhs );
-		~AMateria( void );
+		virtual		~AMateria( void );
 
 		// Constructor
 
@@ -35,6 +38,7 @@ class AMateria
 		// Action Methods
 
 		virtual	AMateria	*clone( void ) const = 0;
+		virtual	void		use( ICharacter &target );
 
 };
 

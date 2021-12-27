@@ -1,4 +1,4 @@
-#include "Ice.hpp"
+#include "IMateriaSource.hpp"
 
 /*
 ** ----------------------
@@ -10,9 +10,9 @@
 ** Constructor by default
 */
 
-Ice::Ice( void ) : AMateria("ice")
+IMateriaSource::IMateriaSource( void )
 {
-	std::cout << "Ice: constructor by default called" << std::endl;
+	std::cout << "IMateriaSource: Constructor by default called" << std::endl;
 	return ;
 }
 
@@ -20,9 +20,9 @@ Ice::Ice( void ) : AMateria("ice")
 ** Constructor by copie
 */
 
-Ice::Ice( Ice const &rhs )
+IMateriaSource::IMateriaSource( IMateriaSource const &rhs )
 {
-	std::cout << "Ice: constructor by copie called" << std::endl;
+	std::cout << "IMateriaSource: Constructor by copie called" << std::endl;
 	*this = rhs;
 	return ;
 }
@@ -31,8 +31,10 @@ Ice::Ice( Ice const &rhs )
 ** Assignment Overload
 */
 
-Ice	&Ice::operator=( Ice const & rhs )
+IMateriaSource	&IMateriaSource::operator=( IMateriaSource const & rhs )
 {
+	
+	std::cout << "IMateriaSource: Assignment's overload called" << std::endl;
 	(void)rhs;
 	return ( *this );
 }
@@ -41,9 +43,9 @@ Ice	&Ice::operator=( Ice const & rhs )
 ** Destructor
 */
 
-Ice::~Ice( void )
+IMateriaSource::~IMateriaSource( void )
 {
-	std::cout << "Ice: destructor called" << std::endl;
+	std::cout << "IMateriaSource: Destructor called" << std::endl;
 	return ;
 }
 
@@ -76,19 +78,6 @@ Ice::~Ice( void )
 ** --- ACTION METHODS ---
 ** ----------------------
 */
-
-Ice	*Ice::clone( void ) const
-{
-	Ice *ice = new Ice();
-	ice->setType(this->getType());
-	return (ice);
-}
-
-void	Ice::use( ICharacter &target )
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() <<" *" << std::endl;
-	return ;
-}
 
 /*
 ** ----------------------

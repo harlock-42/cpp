@@ -1,4 +1,4 @@
-#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
 /*
 ** ----------------------
@@ -10,9 +10,9 @@
 ** Constructor by default
 */
 
-Ice::Ice( void ) : AMateria("ice")
+MateriaSource::MateriaSource( void )
 {
-	std::cout << "Ice: constructor by default called" << std::endl;
+	std::cout << "MateriaSource: Constructor by default called" << std::endl;
 	return ;
 }
 
@@ -20,9 +20,9 @@ Ice::Ice( void ) : AMateria("ice")
 ** Constructor by copie
 */
 
-Ice::Ice( Ice const &rhs )
+MateriaSource::MateriaSource( MateriaSource const &rhs )
 {
-	std::cout << "Ice: constructor by copie called" << std::endl;
+	std::cout << "MateriaSource: Constructor by copie called" << std::endl;
 	*this = rhs;
 	return ;
 }
@@ -31,8 +31,10 @@ Ice::Ice( Ice const &rhs )
 ** Assignment Overload
 */
 
-Ice	&Ice::operator=( Ice const & rhs )
+MateriaSource	&MateriaSource::operator=( MateriaSource const & rhs )
 {
+
+	std::cout << "MateriaSource: Assignment's overload called" << std::endl;
 	(void)rhs;
 	return ( *this );
 }
@@ -41,9 +43,9 @@ Ice	&Ice::operator=( Ice const & rhs )
 ** Destructor
 */
 
-Ice::~Ice( void )
+MateriaSource::~MateriaSource( void )
 {
-	std::cout << "Ice: destructor called" << std::endl;
+	std::cout << "MateriaSource: Destructor called" << std::endl;
 	return ;
 }
 
@@ -77,18 +79,12 @@ Ice::~Ice( void )
 ** ----------------------
 */
 
-Ice	*Ice::clone( void ) const
+void	MateriaSource::learnMateria( AMateria *materia )
 {
-	Ice *ice = new Ice();
-	ice->setType(this->getType());
-	return (ice);
-}
-
-void	Ice::use( ICharacter &target )
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() <<" *" << std::endl;
+	this->_materiaLearned = materia->clone();
 	return ;
 }
+
 
 /*
 ** ----------------------

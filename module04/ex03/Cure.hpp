@@ -1,12 +1,12 @@
-#ifndef ICE_H
-# define ICE_H
+#ifndef CURE_H
+# define CURE_H
 
 # include <iostream>
 # include <string>
 
 # include "AMateria.hpp"
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
 	protected:
 
@@ -14,10 +14,10 @@ class Ice : public AMateria
 
 		// Canonical Form
 
-		Ice( void );
-		Ice( Ice const &rhs );
-		Ice &operator=( Ice const &rhs );
-		virtual ~Ice( void );
+		Cure( void );
+		Cure( Cure const &rhs );
+		Cure &operator=( Cure const &rhs );
+		~Cure( void );
 
 		// Getter
 
@@ -25,8 +25,10 @@ class Ice : public AMateria
 
 		// Action Methods
 
-		virtual	Ice		*clone( void ) const;
+		virtual	Cure	*clone() const;
 		virtual	void	use( ICharacter &target );
+
+
 };
 
 #endif

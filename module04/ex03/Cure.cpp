@@ -1,4 +1,4 @@
-#include "Ice.hpp"
+#include "Cure.hpp"
 
 /*
 ** ----------------------
@@ -10,9 +10,9 @@
 ** Constructor by default
 */
 
-Ice::Ice( void ) : AMateria("ice")
+Cure::Cure( void ) : AMateria("cure")
 {
-	std::cout << "Ice: constructor by default called" << std::endl;
+	//std::cout << Cure: Constructor by default called << std::endl;
 	return ;
 }
 
@@ -20,9 +20,9 @@ Ice::Ice( void ) : AMateria("ice")
 ** Constructor by copie
 */
 
-Ice::Ice( Ice const &rhs )
+Cure::Cure( Cure const &rhs )
 {
-	std::cout << "Ice: constructor by copie called" << std::endl;
+	//std::cout << Cure: Constructor by copie called << std::endl;
 	*this = rhs;
 	return ;
 }
@@ -31,8 +31,10 @@ Ice::Ice( Ice const &rhs )
 ** Assignment Overload
 */
 
-Ice	&Ice::operator=( Ice const & rhs )
+Cure	&Cure::operator=( Cure const & rhs )
 {
+
+	//std::cout << Cure: Assignment's overload called << std::endl;
 	(void)rhs;
 	return ( *this );
 }
@@ -41,9 +43,9 @@ Ice	&Ice::operator=( Ice const & rhs )
 ** Destructor
 */
 
-Ice::~Ice( void )
+Cure::~Cure( void )
 {
-	std::cout << "Ice: destructor called" << std::endl;
+	//std::cout << Cure: Destructor called << std::endl;
 	return ;
 }
 
@@ -77,16 +79,16 @@ Ice::~Ice( void )
 ** ----------------------
 */
 
-Ice	*Ice::clone( void ) const
+Cure	*Cure::clone( void ) const
 {
-	Ice *ice = new Ice();
-	ice->setType(this->getType());
-	return (ice);
+	Cure *cure = new Cure();
+	cure->setType(this->getType());
+	return (cure);
 }
 
-void	Ice::use( ICharacter &target )
+void	Cure::use( ICharacter &target )
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() <<" *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 	return ;
 }
 
