@@ -12,7 +12,7 @@
 
 AMateria::AMateria( void ) : _type("No type yet")
 {
-	std::cout << GREEN << "Constructor by default of AMateria called" << NC << std::endl;
+	// std::cout << GREEN << "Constructor by default of AMateria called" << NC << std::endl;
 	return ;
 }
 
@@ -22,7 +22,7 @@ AMateria::AMateria( void ) : _type("No type yet")
 
 AMateria::AMateria( AMateria const &src )
 {
-	std::cout << GREEN << "Constructor by copie of AMateria called" << NC << std::endl;
+	// std::cout << GREEN << "Constructor by copie of AMateria called" << NC << std::endl;
 	*this = src;
 	return ;
 }
@@ -33,7 +33,7 @@ AMateria::AMateria( AMateria const &src )
 
 AMateria	&AMateria::operator=( AMateria const &rhs )
 {
-	std::cout << GREEN << "Assignement overload of AMateria called" << NC << std::endl;
+	// std::cout << GREEN << "Assignement overload of AMateria called" << NC << std::endl;
 	this->_type = rhs._type;
 	return (*this);
 }
@@ -44,7 +44,7 @@ AMateria	&AMateria::operator=( AMateria const &rhs )
 
 AMateria::~AMateria( void )
 {
-	std::cout << RED << "Destructor of AMateria called" << NC << std::endl;
+	// std::cout << RED << "Destructor of AMateria called" << NC << std::endl;
 	return ;
 }
 
@@ -53,7 +53,7 @@ AMateria::~AMateria( void )
 */
 
 /*
-** Constructor
+** Constructor by type
 */
 
 AMateria::AMateria( std::string type ) : _type(type)

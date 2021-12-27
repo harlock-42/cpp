@@ -34,7 +34,7 @@ Character::Character( std::string name) : ICharacter(name)
 ** Constructor by copie
 */
 
-Character::Character( Character const &rhs )
+Character::Character( Character const &rhs ) : ICharacter(rhs)
 {
 	// std::cout << "Character: Constructor by copie called" << std::endl;
 	*this = rhs;
@@ -47,9 +47,9 @@ Character::Character( Character const &rhs )
 
 Character	&Character::operator=( Character const & rhs )
 {
-
+	for (int i = 0; i < 4; ++i)
+		this->_inv[i] = rhs._inv[i];
 	// std::cout << "Character: Assignment's overload called" << std::endl;
-	(void)rhs;
 	return ( *this );
 }
 
@@ -60,6 +60,11 @@ Character	&Character::operator=( Character const & rhs )
 Character::~Character( void )
 {
 	// std::cout << "Character: Destructor called" << std::endl;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (this->_inv[i] != NULL)
+			delete this->_inv[i];
+	}
 	return ;
 }
 

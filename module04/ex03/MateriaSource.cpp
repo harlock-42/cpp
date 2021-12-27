@@ -12,7 +12,9 @@
 
 MateriaSource::MateriaSource( void )
 {
-	std::cout << "MateriaSource: Constructor by default called" << std::endl;
+	for (int i = 0; i < 4; ++i)
+		this->_source[i] = NULL;
+	// std::cout << "MateriaSource: Constructor by default called" << std::endl;
 	return ;
 }
 
@@ -20,9 +22,9 @@ MateriaSource::MateriaSource( void )
 ** Constructor by copie
 */
 
-MateriaSource::MateriaSource( MateriaSource const &rhs )
+MateriaSource::MateriaSource( MateriaSource const &rhs ) : IMateriaSource(rhs)
 {
-	std::cout << "MateriaSource: Constructor by copie called" << std::endl;
+	// std::cout << "MateriaSource: Constructor by copie called" << std::endl;
 	*this = rhs;
 	return ;
 }
@@ -34,8 +36,9 @@ MateriaSource::MateriaSource( MateriaSource const &rhs )
 MateriaSource	&MateriaSource::operator=( MateriaSource const & rhs )
 {
 
-	std::cout << "MateriaSource: Assignment's overload called" << std::endl;
-	(void)rhs;
+	// std::cout << "MateriaSource: Assignment's overload called" << std::endl;
+	for (int i = 0; i < 4; ++i)
+		this->_source[i] = rhs._source[i];
 	return ( *this );
 }
 
@@ -45,7 +48,12 @@ MateriaSource	&MateriaSource::operator=( MateriaSource const & rhs )
 
 MateriaSource::~MateriaSource( void )
 {
-	std::cout << "MateriaSource: Destructor called" << std::endl;
+	// std::cout << "MateriaSource: Destructor called" << std::endl;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (this->_source[i] != NULL)
+			delete this->_source[i];
+	}
 	return ;
 }
 
@@ -81,8 +89,27 @@ MateriaSource::~MateriaSource( void )
 
 void	MateriaSource::learnMateria( AMateria *materia )
 {
-	this->_materiaLearned = materia->clone();
+	if (materia == NULL)
+		return ;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (this->_source[i] == NULL)
+		{
+			this->_source[i] = materia;
+			break ;
+		}
+	}
 	return ;
+}
+
+AMateria	*MateriaSource::createMateria( std::string const &type )
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		if (type.compare(this->_source[i]->getType()) == 0)
+			return (this->_source[i]->clone());
+	}
+	return (NULL);
 }
 
 

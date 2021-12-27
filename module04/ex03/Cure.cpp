@@ -20,7 +20,7 @@ Cure::Cure( void ) : AMateria("cure")
 ** Constructor by copie
 */
 
-Cure::Cure( Cure const &rhs )
+Cure::Cure( Cure const &rhs ) : AMateria(rhs)
 {
 	//std::cout << Cure: Constructor by copie called << std::endl;
 	*this = rhs;

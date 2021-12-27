@@ -12,7 +12,7 @@
 
 IMateriaSource::IMateriaSource( void )
 {
-	std::cout << "IMateriaSource: Constructor by default called" << std::endl;
+	// std::cout << "IMateriaSource: Constructor by default called" << std::endl;
 	return ;
 }
 
@@ -22,7 +22,7 @@ IMateriaSource::IMateriaSource( void )
 
 IMateriaSource::IMateriaSource( IMateriaSource const &rhs )
 {
-	std::cout << "IMateriaSource: Constructor by copie called" << std::endl;
+	// std::cout << "IMateriaSource: Constructor by copie called" << std::endl;
 	*this = rhs;
 	return ;
 }
@@ -34,7 +34,7 @@ IMateriaSource::IMateriaSource( IMateriaSource const &rhs )
 IMateriaSource	&IMateriaSource::operator=( IMateriaSource const & rhs )
 {
 	
-	std::cout << "IMateriaSource: Assignment's overload called" << std::endl;
+	// std::cout << "IMateriaSource: Assignment's overload called" << std::endl;
 	(void)rhs;
 	return ( *this );
 }
@@ -45,7 +45,7 @@ IMateriaSource	&IMateriaSource::operator=( IMateriaSource const & rhs )
 
 IMateriaSource::~IMateriaSource( void )
 {
-	std::cout << "IMateriaSource: Destructor called" << std::endl;
+	// std::cout << "IMateriaSource: Destructor called" << std::endl;
 	return ;
 }
 

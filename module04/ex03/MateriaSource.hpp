@@ -10,7 +10,7 @@ class MateriaSource : public IMateriaSource
 {
 	protected:
 
-		AMateria	*_materiaLearned;
+		AMateria	*_source[4];
 
 	public:
 
@@ -28,6 +28,7 @@ class MateriaSource : public IMateriaSource
 		// Action Methods
 
 		virtual	void	learnMateria( AMateria *materia );
+		virtual	AMateria	*createMateria( std::string const &type);
 };
 
 #endif

@@ -12,7 +12,7 @@
 
 Ice::Ice( void ) : AMateria("ice")
 {
-	std::cout << "Ice: constructor by default called" << std::endl;
+	// std::cout << "Ice: constructor by default called" << std::endl;
 	return ;
 }
 
@@ -20,9 +20,9 @@ Ice::Ice( void ) : AMateria("ice")
 ** Constructor by copie
 */
 
-Ice::Ice( Ice const &rhs )
+Ice::Ice( Ice const &rhs ) : AMateria(rhs)
 {
-	std::cout << "Ice: constructor by copie called" << std::endl;
+	// std::cout << "Ice: constructor by copie called" << std::endl;
 	*this = rhs;
 	return ;
 }
@@ -43,7 +43,7 @@ Ice	&Ice::operator=( Ice const & rhs )
 
 Ice::~Ice( void )
 {
-	std::cout << "Ice: destructor called" << std::endl;
+	// std::cout << "Ice: destructor called" << std::endl;
 	return ;
 }
 

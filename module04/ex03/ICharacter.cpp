@@ -45,7 +45,7 @@ ICharacter	&ICharacter::operator=( ICharacter const & rhs )
 {
 
 	// std::cout << "ICharacter: Assignment's overload called" << std::endl;
-	(void)rhs;
+	this->_name = rhs._name;
 	return ( *this );
 }
 
