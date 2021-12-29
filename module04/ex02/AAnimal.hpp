@@ -1,9 +1,9 @@
-#ifndef AANIMAL_H
-# define AANIMAL_H
+#ifndef ANIMAL_H
+# define ANIMAL_H
 
-# include "color.hpp"
 # include <iostream>
 # include <string>
+# include "color.hpp"
 
 class AAnimal
 {
@@ -13,16 +13,27 @@ class AAnimal
 
 	public:
 
-		// Canonical form
-
 		AAnimal( void );
-		AAnimal( AAnimal const &src);
-		AAnimal	&operator=( AAnimal const &rhs);
+		AAnimal( std::string type );
+		AAnimal( AAnimal const &src );
 		virtual ~AAnimal( void );
+		AAnimal	&operator=( AAnimal const &rhs );
 
-		// Acion Methods
+		// getter
+
+		std::string	getType( void ) const;
+		virtual	std::string	getIdeas( void ) const = 0;
+
+		//setter
+
+		void	setType( std::string type );
+		virtual	void	setIdeas( std::string ideas ) = 0;
+		
+		// action methods
 
 		virtual void	makeSound( void ) const = 0;
 };
 
-#endif
+std::ostream	&operator<<( std::ostream &os, AAnimal const &rhs );
+
+# endif

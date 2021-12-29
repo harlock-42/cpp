@@ -22,7 +22,8 @@ Dog::Dog( void ) : Animal("Dog"), _brain( new Brain())
 
 Dog::Dog( Dog const &rhs ) : Animal(rhs)
 {
-	*this = rhs;
+	this->_brain = new Brain();
+	*(this->_brain) = *(rhs._brain);
 	return ;
 }
 
@@ -49,6 +50,37 @@ Dog	&Dog::operator=( Dog const &rhs )
 
 /*
 ** ----------------------
+*/
+
+/*
+** --------------
+** --- SETTER ---
+** --------------
+*/
+
+void	Dog::setIdeas( std::string ideas )
+{
+	this->_brain->setIdeas(ideas);
+	return ;
+}
+
+/*
+** --------------
+*/
+
+/*
+** --------------
+** --- GETTER ---
+** --------------
+*/
+
+std::string	Dog::getIdeas( void ) const
+{
+	return (this->_brain->getIdeas());
+}
+
+/*
+** --------------
 */
 
 /*

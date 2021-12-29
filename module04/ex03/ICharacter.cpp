@@ -33,7 +33,7 @@ ICharacter::ICharacter( std::string name ) : _name(name)
 ICharacter::ICharacter( ICharacter const &rhs )
 {
 	// std::cout << "ICharacter: Constructor by copie called" << std::endl;
-	*this = rhs;
+	this->_name = rhs._name;
 	return ;
 }
 

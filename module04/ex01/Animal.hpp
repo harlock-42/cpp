@@ -22,10 +22,12 @@ class Animal
 		// getter
 
 		std::string	getType( void ) const;
+		virtual	std::string	getIdeas( void ) const;
 
 		//setter
 
 		void	setType( std::string type );
+		virtual	void	setIdeas( std::string ideas );
 		
 		// action methods
 

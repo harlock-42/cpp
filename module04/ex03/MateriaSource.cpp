@@ -25,7 +25,13 @@ MateriaSource::MateriaSource( void )
 MateriaSource::MateriaSource( MateriaSource const &rhs ) : IMateriaSource(rhs)
 {
 	// std::cout << "MateriaSource: Constructor by copie called" << std::endl;
-	*this = rhs;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (rhs._source[i] == NULL)
+			this->_source[i] = NULL;
+		else
+			this->_source[i] = rhs._source[i]->clone();
+	}
 	return ;
 }
 

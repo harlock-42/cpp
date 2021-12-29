@@ -7,12 +7,21 @@
 */
 
 /*
-** Constructor by default
+** Default constructor
 */
 
 AAnimal::AAnimal( void ) : _type("")
 {
-	std::cout << GREEN << "An Animal appeared" << NC << std::endl;
+	return ;
+}
+
+/*
+** Constructor
+*/
+
+AAnimal::AAnimal( std::string type ) : _type(type)
+{
+	std::cout << "An Animal is born !" << std::endl;
 	return ;
 }
 
@@ -22,8 +31,17 @@ AAnimal::AAnimal( void ) : _type("")
 
 AAnimal::AAnimal( AAnimal const &src )
 {
-	std::cout << GREEN << "The Animal has been cloned" << NC << std::endl;
+	std::cout << "An Animal has been cloned !!" << std::endl;
 	*this = src;
+}
+
+/*
+** Destructor
+*/
+
+AAnimal::~AAnimal( void )
+{
+	std::cout << "An Animal has been eaten..." << std::endl;
 	return ;
 }
 
@@ -34,18 +52,17 @@ AAnimal::AAnimal( AAnimal const &src )
 AAnimal	&AAnimal::operator=( AAnimal const &rhs )
 {
 	this->_type = rhs._type;
-	std::cout << GREEN << "The Animal has been assigned" << NC << std::endl;
 	return (*this);
 }
 
 /*
-** Destructor
+** Left redirection overload
 */
 
-AAnimal::~AAnimal( void )
+std::ostream	&operator<<( std::ostream &os, AAnimal const &rhs )
 {
-	std::cout << RED << "The Animal is gone !" << NC << std::endl;
-	return ;
+	os << rhs.getType() << std::endl;
+	return (os);
 }
 
 /*
@@ -53,17 +70,32 @@ AAnimal::~AAnimal( void )
 */
 
 /*
-** ----------------------
-** --- ACTION METHODS ---
-** ----------------------
+** --------------
+** --- getter ---
+** --------------
 */
 
-void	AAnimal::makeSound( void ) const
+std::string		AAnimal::getType( void ) const
 {
-	std::cout << YELLOW << "Hein ???" << NC << std::endl;
+	return (this->_type);
+}
+
+/*
+** --------------
+*/
+
+/*
+** --------------
+** --- setter ---
+** --------------
+*/
+
+void	AAnimal::setType( std::string type )
+{
+	this->_type = type;
 	return ;
 }
 
 /*
-** ----------------------
+** --------------
 */

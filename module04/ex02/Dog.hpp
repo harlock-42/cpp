@@ -1,34 +1,32 @@
 #ifndef DOG_H
 # define DOG_H
 
-# include <string>
-# include <iostream>
-# include "color.hpp"
-# include "AAnimal.hpp"
-# include "Brain.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
+#include "color.hpp"
 
-
-class Dog
+class Dog : public AAnimal
 {
 	private:
 
-		std::string _type;
-		Brain		*_brain;
+		Brain	*_brain;
 
 	public:
 
-		// Canonical form
-
 		Dog( void );
 		~Dog( void );
-		Dog( Dog const &src);
-		Dog	&operator=(Dog const &rhs);
+		Dog( Dog const &src );
+		Dog	&operator=( Dog const &rhs );
 
-		// Getter
+		// getter
 
-		std::string	getType( void ) const;
+		std::string	getIdeas( void ) const;
 
-		// Action Methods
+		// setter
+
+		void		setIdeas( std::string ideas );
+
+		// actions methodes
 
 		virtual void	makeSound( void ) const;
 };

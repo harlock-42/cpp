@@ -1,36 +1,34 @@
 #ifndef CAT_H
 # define CAT_H
 
-# include <string>
-# include <iostream>
-# include "color.hpp"
-# include "AAnimal.hpp"
-# include "Brain.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
+#include "color.hpp"
 
 class Cat : public AAnimal
 {
 	private:
-
-		std::string _type;
-		Brain		*_brain;
+	
+		Brain	*_brain;
 
 	public:
 
-		// Canonical form
-
 		Cat( void );
 		~Cat( void );
-		Cat( Cat const &src);
-		Cat	&operator=(Cat const &rhs);
+		Cat( Cat const &src );
+		Cat	&operator=( Cat const &rhs );
 
-		// Getter
+		// getter
 
-		std::string	getType( void ) const;
+		std::string	getIdeas( void ) const;
 
-		// Action Methods
+		// setter
+
+		void		setIdeas( std::string ideas );
+		
+		// action methods
 
 		virtual void	makeSound( void ) const;
-
 };
 
 #endif

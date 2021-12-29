@@ -9,14 +9,23 @@ class Brain
 {
 	private:
 
-		std::string	ideas[100];
+		std::string	_ideas[100];
 
 	public:
 
 		// Canonical form
 
 		Brain( void );
+		Brain( Brain const &rhs );
 		~Brain( void );
+
+		// Setter
+
+		void	setIdeas( std::string ideas );
+		
+		// Getter
+
+		std::string	getIdeas( void ) const;
 };
 
 #endif

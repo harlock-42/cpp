@@ -18,6 +18,14 @@ class Dog : public Animal
 		Dog( Dog const &src );
 		Dog	&operator=( Dog const &rhs );
 
+		// getter
+
+		std::string	getIdeas( void ) const;
+
+		// setter
+
+		void		setIdeas( std::string ideas );
+
 		// actions methodes
 
 		virtual void	makeSound( void ) const;

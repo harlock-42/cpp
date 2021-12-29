@@ -18,6 +18,14 @@ class Cat : public Animal
 		Cat( Cat const &src );
 		Cat	&operator=( Cat const &rhs );
 
+		// getter
+
+		std::string	getIdeas( void ) const;
+
+		// setter
+
+		void		setIdeas( std::string ideas );
+		
 		// action methods
 
 		virtual void	makeSound( void ) const;

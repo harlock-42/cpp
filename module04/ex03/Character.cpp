@@ -37,7 +37,13 @@ Character::Character( std::string name) : ICharacter(name)
 Character::Character( Character const &rhs ) : ICharacter(rhs)
 {
 	// std::cout << "Character: Constructor by copie called" << std::endl;
-	*this = rhs;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (rhs._inv[i] == NULL)
+			this->_inv[i] = NULL;
+		else
+			this->_inv[i] = rhs._inv[i]->clone();
+	}
 	return ;
 }
 

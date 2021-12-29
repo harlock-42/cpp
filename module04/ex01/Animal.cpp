@@ -80,6 +80,11 @@ std::string		Animal::getType( void ) const
 	return (this->_type);
 }
 
+std::string		Animal::getIdeas( void ) const
+{
+	return (NULL);
+}
+
 /*
 ** --------------
 */
@@ -93,6 +98,12 @@ std::string		Animal::getType( void ) const
 void	Animal::setType( std::string type )
 {
 	this->_type = type;
+	return ;
+}
+
+void	Animal::setIdeas( std::string ideas )
+{
+	(void)ideas;
 	return ;
 }
 

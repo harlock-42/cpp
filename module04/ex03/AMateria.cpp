@@ -23,7 +23,7 @@ AMateria::AMateria( void ) : _type("No type yet")
 AMateria::AMateria( AMateria const &src )
 {
 	// std::cout << GREEN << "Constructor by copie of AMateria called" << NC << std::endl;
-	*this = src;
+	this->_type = src._type;
 	return ;
 }
 

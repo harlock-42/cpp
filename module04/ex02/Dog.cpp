@@ -1,4 +1,4 @@
-#include "Dog.hpp"
+# include "Dog.hpp"
 
 /*
 ** ----------------------
@@ -7,12 +7,12 @@
 */
 
 /*
-** Constructor by default
+** Constructor
 */
 
-Dog::Dog( void ) : _type("Dog"), _brain(new Brain())
+Dog::Dog( void ) : AAnimal("Dog"), _brain( new Brain())
 {
-	std::cout << GREEN << "Dog constructor called" << NC << std::endl;
+	std::cout << GREEN << "The mad scientist transplant a brain in a Dog" << NC << std::endl;
 	return ;
 }
 
@@ -20,22 +20,11 @@ Dog::Dog( void ) : _type("Dog"), _brain(new Brain())
 ** Constructor by copie
 */
 
-Dog::Dog( Dog const &src )
+Dog::Dog( Dog const &rhs ) : AAnimal(rhs)
 {
-	std::cout << GREEN << "Dog copie constructor called" << NC << std::endl;
-	*this = src;
+	this->_brain = new Brain();
+	*(this->_brain) = *(rhs._brain);
 	return ;
-}
-
-/*
-** Assignement Overload
-*/
-
-Dog	&Dog::operator=( Dog const &rhs)
-{
-	std::cout << "Assignement overload called" << std::endl;
-	this->_type = rhs.getType();
-	return (*this);
 }
 
 /*
@@ -44,24 +33,35 @@ Dog	&Dog::operator=( Dog const &rhs)
 
 Dog::~Dog( void )
 {
-	delete	_brain;
-	std::cout << RED << "Dog destructor called" << NC << std::endl;
+	delete this->_brain;
+	std::cout << RED << "The Dog dies... with his fake brain !" << NC << std::endl;
 	return ;
 }
 
 /*
+** assignement overload
+*/
+
+Dog	&Dog::operator=( Dog const &rhs )
+{
+	this->AAnimal::setType(rhs.AAnimal::getType());
+	return (*this);
+}
+
+/*
 ** ----------------------
 */
 
 /*
 ** --------------
-** --- Getter ---
+** --- SETTER ---
 ** --------------
 */
 
-std::string	Dog::getType( void ) const
+void	Dog::setIdeas( std::string ideas )
 {
-	return (this->_type);
+	this->_brain->setIdeas(ideas);
+	return ;
 }
 
 /*
@@ -69,17 +69,28 @@ std::string	Dog::getType( void ) const
 */
 
 /*
-** ----------------------
-** --- ACTION METHODS ---
-** ----------------------
+** --------------
+** --- GETTER ---
+** --------------
+*/
+
+std::string	Dog::getIdeas( void ) const
+{
+	return (this->_brain->getIdeas());
+}
+
+/*
+** --------------
+*/
+
+/*
+** -----------------------
+** --- ACTIONS METHODS ---
+** -----------------------
 */
 
 void	Dog::makeSound( void ) const
 {
-	std::cout << PURPLE << "miaouuu" << NC << std::endl;
+	std::cout << "waf" << std::endl;
 	return ;
 }
-
-/*
-** ----------------------
-*/

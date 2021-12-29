@@ -1,4 +1,4 @@
-#include "Cat.hpp"
+# include "Cat.hpp"
 
 /*
 ** ----------------------
@@ -7,12 +7,12 @@
 */
 
 /*
-** Constructor by default
+** Constructor
 */
 
-Cat::Cat( void ) : _type("Cat"), _brain(new Brain())
+Cat::Cat( void ) : AAnimal("Cat"), _brain(new Brain())
 {
-	std::cout << GREEN << "Cat constructor called" << NC << std::endl;
+	std::cout << GREEN << "The mad scientist transplant a brain in a Cat" << NC << std::endl;
 	return ;
 }
 
@@ -20,22 +20,11 @@ Cat::Cat( void ) : _type("Cat"), _brain(new Brain())
 ** Constructor by copie
 */
 
-Cat::Cat( Cat const &src ) : AAnimal()
+Cat::Cat( Cat const &rhs ) : AAnimal(rhs)
 {
-	std::cout << GREEN << "Cat copie constructor called" << NC << std::endl;
-	*this = src;
+	this->_brain = new Brain();
+	*(this->_brain) = *(rhs._brain);
 	return ;
-}
-
-/*
-** Assignement Overload
-*/
-
-Cat	&Cat::operator=( Cat const &rhs)
-{
-	std::cout << "Assignement overload called" << std::endl;
-	this->_type = rhs.getType();
-	return (*this);
 }
 
 /*
@@ -44,24 +33,36 @@ Cat	&Cat::operator=( Cat const &rhs)
 
 Cat::~Cat( void )
 {
-	delete	_brain;
-	std::cout << RED << "Cat destructor called" << NC << std::endl;
+	delete this->_brain;
+	std::cout << RED << "The Cat dies... with his fake brain !" << NC << std::endl;
 	return ;
 }
 
 /*
+** assignement overload
+*/
+
+Cat	&Cat::operator=( Cat const &rhs )
+{
+	this->AAnimal::setType(rhs.AAnimal::getType());
+	this->_brain = rhs._brain;
+	return (*this);
+}
+
+/*
 ** ----------------------
 */
 
 /*
 ** --------------
-** --- Getter ---
+** --- SETTER ---
 ** --------------
 */
 
-std::string	Cat::getType( void ) const
+void	Cat::setIdeas( std::string ideas )
 {
-	return (this->_type);
+	this->_brain->setIdeas(ideas);
+	return ;
 }
 
 /*
@@ -69,17 +70,29 @@ std::string	Cat::getType( void ) const
 */
 
 /*
-** ----------------------
-** --- ACTION METHODS ---
-** ----------------------
+** --------------
+** --- GETTER ---
+** --------------
+*/
+
+std::string	Cat::getIdeas( void ) const
+{
+	return (this->_brain->getIdeas());
+}
+
+/*
+** --------------
+*/
+
+
+/*
+** -----------------------
+** --- ACTIONS METHODS ---
+** -----------------------
 */
 
 void	Cat::makeSound( void ) const
 {
-	std::cout << PURPLE << "miaouuu" << NC << std::endl;
+	std::cout << "miaou" << std::endl;
 	return ;
 }
-
-/*
-** ----------------------
-*/

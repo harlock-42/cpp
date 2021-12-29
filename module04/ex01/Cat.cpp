@@ -22,7 +22,8 @@ Cat::Cat( void ) : Animal("Cat"), _brain(new Brain())
 
 Cat::Cat( Cat const &rhs ) : Animal(rhs)
 {
-	*this = rhs;
+	this->_brain = new Brain();
+	*(this->_brain) = *(rhs._brain);
 	return ;
 }
 
@@ -44,12 +45,45 @@ Cat::~Cat( void )
 Cat	&Cat::operator=( Cat const &rhs )
 {
 	this->Animal::setType(rhs.Animal::getType());
+	this->_brain = rhs._brain;
 	return (*this);
 }
 
 /*
 ** ----------------------
 */
+
+/*
+** --------------
+** --- SETTER ---
+** --------------
+*/
+
+void	Cat::setIdeas( std::string ideas )
+{
+	this->_brain->setIdeas(ideas);
+	return ;
+}
+
+/*
+** --------------
+*/
+
+/*
+** --------------
+** --- GETTER ---
+** --------------
+*/
+
+std::string	Cat::getIdeas( void ) const
+{
+	return (this->_brain->getIdeas());
+}
+
+/*
+** --------------
+*/
+
 
 /*
 ** -----------------------

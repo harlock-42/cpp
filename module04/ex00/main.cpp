@@ -17,6 +17,8 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 	std::cout << std::endl;
+	delete j;
+	delete i;
 	std::cout << "------------- " << "Wrong Cat" << " --------------" << std::endl << std::endl;
 	const WrongAnimal* wmeta = new WrongAnimal();
 	const WrongAnimal* wi = new WrongCat();
@@ -25,4 +27,6 @@ int main()
 	wi->makeSound(); //will output the wrongcat sound!
 	wmeta->makeSound();
 	std::cout << std::endl;
+	delete wmeta;
+	delete wi;
 }

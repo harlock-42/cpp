@@ -6,13 +6,18 @@
 
 int main()
 {
-	Animal *tab[100];
-	for (int i = 0; i < 50; ++i)
+	Animal *tab[10];
+	for (int i = 0; i < 5; ++i)
 	{
 		tab[i] =  new Cat();
-		tab[i + 50] = new Dog();
+		tab[i]->setIdeas("I just want to sleep all the day...");
+		tab[i + 5] = new Dog();
+		tab[i + 5]->setIdeas("waf waf");
 	}
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < 10; ++i)
+		std::cout << YELLOW << tab[i]->getIdeas() << NC << std::endl;
+	for (int i = 0; i < 10; ++i)
 		delete tab[i];
+	std::cout << std::endl << "-----------------" << std::endl << std::endl;
 	return (0);
 }
