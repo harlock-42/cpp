@@ -5,6 +5,7 @@
 # include <string>
 # include <exception>
 # include "Form.hpp"
+# include "color.hpp"
 
 class Form;
 
@@ -34,11 +35,14 @@ class Bureaucrat
 
 		// Setter
 
+		void	setGrade( int grade );
+
 		// Action Methods
 
 		void	incGrade( void );
 		void	decGrade( void );
 		void	signForm( Form &form ) const;
+		void	executeForm( Form const &form ) const;
 
 		// Exception methods
 

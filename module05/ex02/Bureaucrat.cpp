@@ -103,6 +103,12 @@ int					Bureaucrat::getGrade( void ) const
 ** --------------
 */
 
+void Bureaucrat::setGrade( int grade )
+{
+	this->_grade = grade;
+	return ;
+}
+
 /*
 ** --------------
 */
@@ -151,6 +157,20 @@ void	Bureaucrat::signForm( Form &form ) const
 	{
 		std::cerr << "ERROR: " << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm( Form const &form ) const
+{
+	try
+	{
+		form.checkProcess(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	return ;
 }
 
 /*

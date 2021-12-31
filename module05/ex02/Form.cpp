@@ -56,8 +56,7 @@ Form::Form( Form const &rhs )
 
 Form	&Form::operator=( Form const & rhs )
 {
-	if (&rhs != this)
-		*this = Form(rhs);
+	(void)rhs;
 	return ( *this );
 }
 
@@ -167,6 +166,12 @@ void	Form::isTooHigh( int grade, int toCmp, std::string const error ) const
 	return ;
 }
 
+void	Form::checkProcess( Bureaucrat const &bur ) const
+{
+	if (this->_sign == false)
+		throw FormNotSignedException("The form is not signed");
+	this->isTooLow(bur.getGrade(), this->getExecGrade(), bur.getName() + " doesn't have enough grade to execute the form");
+}
 
 /*
 ** --------------------------
@@ -197,6 +202,17 @@ Form::GradeToHighException::GradeToHighException(std::string const error ) throw
 }
 
 const	char	*Form::GradeToHighException::what( void ) const throw()
+{
+	return (this->_error.c_str());
+}
+
+Form::FormNotSignedException::FormNotSignedException( std::string const error ) throw() : _error(error)
+{
+	(void)_error;
+	return ;
+}
+
+const	char	*Form::FormNotSignedException::what( void ) const throw()
 {
 	return (this->_error.c_str());
 }

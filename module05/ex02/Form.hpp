@@ -13,8 +13,8 @@ class Form
 	private:
 
 		std::string		const	_name;
-		int			const		_signGrade;
-		int			const		_execGrade;
+		int						_signGrade;
+		int						_execGrade;
 		bool					_sign;
 
 	protected:
@@ -27,7 +27,7 @@ class Form
 		Form( std::string const name, int signGrade, int execGrade, bool sign = false);
 		Form( Form const &rhs );
 		Form &operator=( Form const &rhs );
-		~Form( void );
+		virtual ~Form( void );
 
 		// Getter
 
@@ -40,14 +40,17 @@ class Form
 
 		void	setSign( bool sign );
 
+
 		// Action Methods
 
 		void	beSigned( Bureaucrat const &src );
+		virtual	void	execute( Bureaucrat const &executor ) const = 0;
 
 		// Exceptions
 
-		void	isTooLow(int grade, int toCmp, std::string const error) const;
-		void	isTooHigh(int grade, int toCmp, std::string const error) const;
+		void	isTooLow( int grade, int toCmp, std::string const error ) const;
+		void	isTooHigh( int grade, int toCmp, std::string const error ) const;
+		void	checkProcess( Bureaucrat const &bur ) const;
 
 
 		class GradeToLowException : public std::exception
@@ -79,6 +82,21 @@ class Form
 				virtual	const	char	*what( void ) const	throw();
 
 				virtual	~GradeToHighException( void ) throw() {}
+		};
+
+		class FormNotSignedException : public std::exception
+		{
+			private:
+
+				std::string	const	_error;
+
+			public:
+				
+				FormNotSignedException(std::string const error) throw();
+
+				virtual	const	char	*what( void ) const	throw();
+
+				virtual	~FormNotSignedException( void ) throw() {}
 		};
 };
 
