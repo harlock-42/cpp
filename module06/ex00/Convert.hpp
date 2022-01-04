@@ -5,6 +5,9 @@
 # include <string>
 # include <exception>
 # include <ctype.h>
+# include <sstream>
+# include <stdio.h>
+# include <stdlib.h>
 
 class Convert
 {
@@ -12,6 +15,11 @@ class Convert
 
 		std::string	const	_str;
 		bool				_isChar;
+		
+		char				_char;
+		int					_int;
+		float				_float;
+		double				_double;
 
 	public:
 
@@ -30,9 +38,18 @@ class Convert
 		// Action Methods
 
 		void	checkInput( std::string const str );
+
 		bool	isChar( std::string const str ) const;
 		bool	isInt( std::string str ) const;
 		bool	isDouble( std::string str ) const;
+		bool	isFloat( std::string str ) const;
+
+		void	convertByChar( std::string str );
+		void	convertByInt( std::string str );
+		void	convertByFloat( std::string str );
+		void	convertByDouble( std::string str );
+
+		void	print( void ) const;
 
 		// Exception class overload
 

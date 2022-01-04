@@ -8,6 +8,7 @@ int		main( int argc, char **argv )
 		return (1);
 	(void)argv;
 	std::string str = argv[1];
-	Convert((std::string)str);
+	Convert	cvt = Convert((std::string)str);
+	cvt.print();
 	return (0);
 }

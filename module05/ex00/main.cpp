@@ -3,6 +3,7 @@
 
 int		main()
 {
+	
 	std::cout << PURPLE << "input: grade = 151" << NC << std::endl << std::endl;
 	Bureaucrat("", 151);
 	std::cout << PURPLE << "input: grade = 0" << NC << std::endl << std::endl;

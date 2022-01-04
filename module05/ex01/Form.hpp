@@ -13,8 +13,8 @@ class Form
 	private:
 
 		std::string		const	_name;
-		int			const		_signGrade;
-		int			const		_execGrade;
+		int				const	_signGrade;
+		int				const	_execGrade;
 		bool					_sign;
 
 	protected:

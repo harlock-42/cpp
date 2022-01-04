@@ -118,9 +118,7 @@ Form	*Intern::makeForme( std::string const formName, std::string const target )
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-
-	return (new RobotomyRequestForm());
+	return NULL;
 }
 
 /*

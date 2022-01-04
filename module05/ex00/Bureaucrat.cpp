@@ -54,8 +54,7 @@ Bureaucrat::Bureaucrat( Bureaucrat const &rhs ) : _name(rhs._name), _grade(rhs._
 Bureaucrat	&Bureaucrat::operator=( Bureaucrat const & rhs )
 {
 	//std::cout << "Bureaucrat: Assignment's overload called" << std::endl;
-	if (this != &rhs)
-		*this = Bureaucrat(rhs);
+	this->_grade = rhs.getGrade();
 	return ( *this );
 }
 
