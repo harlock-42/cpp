@@ -10,7 +10,7 @@
 ** Constructor by default
 */
 
-Form::Form( void )
+Form::Form( void ) : _name(""), _signGrade(1), _execGrade(1)
 {
 	//std::cout << Form: Constructor by default called << std::endl;
 	return ;
@@ -20,7 +20,7 @@ Form::Form( void )
 ** Constructor by name and grad
 */
 
-Form::Form( std::string const name, int signGrade, int execGrade, bool sign ) : _name(name), _signGrade(0), _execGrade(0)
+Form::Form( std::string const name, int signGrade, int execGrade, bool sign ) : _name(name), _signGrade(signGrade), _execGrade(execGrade)
 {
 	this->_sign = sign;
 	try
@@ -29,8 +29,6 @@ Form::Form( std::string const name, int signGrade, int execGrade, bool sign ) : 
 		this->isTooLow(execGrade, 150, "Exec grade is to low");
 		this->isTooHigh(execGrade, 1, "Exec grade is to high");
 		this->isTooHigh(signGrade, 1, "Sign grade is to high");
-		this->_signGrade = signGrade;
-		this->_execGrade = execGrade;
 	}
 	catch (std::exception &e)
 	{
@@ -43,10 +41,9 @@ Form::Form( std::string const name, int signGrade, int execGrade, bool sign ) : 
 ** Constructor by copie
 */
 
-Form::Form( Form const &rhs )
+Form::Form( Form const &rhs ) : _name(rhs.getName()), _signGrade(rhs.getSignGrade()), _execGrade(rhs.getExecGrade())
 {
 	//std::cout << Form: Constructor by copie called << std::endl;
-	*this = rhs;
 	return ;
 }
 
@@ -56,7 +53,8 @@ Form::Form( Form const &rhs )
 
 Form	&Form::operator=( Form const & rhs )
 {
-	(void)rhs;
+	if (&rhs != this)
+		*this = rhs;
 	return ( *this );
 }
 

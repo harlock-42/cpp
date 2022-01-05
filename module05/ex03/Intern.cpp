@@ -25,7 +25,9 @@ Intern::Intern( void )
 
 Intern::Intern( Intern const &rhs ) 
 {
-	(void)rhs;
+	this->ft_ptr[SCF] = rhs.ft_ptr[SCF];
+	this->ft_ptr[RRF] = rhs.ft_ptr[RRF];
+	this->ft_ptr[PPF] = rhs.ft_ptr[PPF];
 	return ;
 }
 
@@ -37,7 +39,8 @@ Intern	&Intern::operator=( Intern const & rhs )
 {
 
 	//std::cout << "Intern: Assignment's overload called" << std::endl;
-	(void)rhs;
+	if (&rhs != this)
+		*this = rhs;
 	return ( *this );
 }
 

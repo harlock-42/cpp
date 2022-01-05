@@ -33,7 +33,6 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : Form("Shrub
 ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &rhs ) : Form(rhs.getName(), rhs.getSignGrade(), rhs.getExecGrade(), rhs.getSign())
 {
 	//std::cout << "ShrubberyCreationForm: Constructor by copie called" << std::endl;
-	*this = rhs;
 	return ;
 }
 
@@ -45,7 +44,7 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=( ShrubberyCreationForm c
 {
 
 	if (&rhs != this)
-		*this = ShrubberyCreationForm(rhs);
+		*this = rhs;
 	return ( *this );
 }
 

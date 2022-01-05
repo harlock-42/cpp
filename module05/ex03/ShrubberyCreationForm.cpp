@@ -45,7 +45,7 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=( ShrubberyCreationForm c
 {
 
 	if (&rhs != this)
-		*this = ShrubberyCreationForm(rhs);
+		*this = rhs;
 	return ( *this );
 }
 

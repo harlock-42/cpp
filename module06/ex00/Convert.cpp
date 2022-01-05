@@ -239,7 +239,7 @@ void	Convert::convertByFloat( std::string str )
 	this->_float = (float)atof(str.c_str());
 	this->_double = this->_float;
 	this->_int = (int)this->_float;
-	this->_char = (char)this->_char; // doesn't work
+	this->_char = (char)this->_float; // doesn't work
 }
 
 /*

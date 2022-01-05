@@ -43,7 +43,7 @@ RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const &rhs ) : For
 RobotomyRequestForm	&RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
 	if (&rhs != this)
-		*this = RobotomyRequestForm(rhs);
+		*this = rhs;
 	//std::cout << "RobotomyRequestForm: Assignment's overload called" << std::endl;
 	return ( *this );
 }

@@ -8,7 +8,6 @@
 
 int		main()
 {
-
 	Intern	intern;
 	Form	*form = intern.makeForme("PresidentialPardonForm", "harlock");
 	std::cout << *form << std::endl;
@@ -20,6 +19,5 @@ int		main()
 	std::cout << *form << std::endl;
 	delete	form;
 	form = intern.makeForme("Form", "harlock");
-
 	return (0);
 }

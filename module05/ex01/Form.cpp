@@ -52,7 +52,9 @@ Form::Form( Form const &rhs ) : _signGrade(rhs.getSignGrade()), _execGrade(rhs.g
 
 Form	&Form::operator=( Form const & rhs )
 {
-	this->_sign = rhs.getSign();
+	// this->_sign = rhs.getSign();
+	if (this != &rhs)
+	*this = rhs;
 	return ( *this );
 }
 

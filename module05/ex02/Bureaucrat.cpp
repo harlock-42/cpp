@@ -55,7 +55,7 @@ Bureaucrat	&Bureaucrat::operator=( Bureaucrat const & rhs )
 {
 	//std::cout << "Bureaucrat: Assignment's overload called" << std::endl;
 	if (this != &rhs)
-		*this = Bureaucrat(rhs);
+		*this = rhs;
 	return ( *this );
 }
 
@@ -164,6 +164,7 @@ void	Bureaucrat::executeForm( Form const &form ) const
 	try
 	{
 		form.checkProcess(*this);
+		form.execute(*this);
 	}
 	catch(const std::exception& e)
 	{

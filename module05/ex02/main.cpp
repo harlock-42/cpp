@@ -47,7 +47,7 @@ int		main()
 	form->execute(c);
 	delete form;
 
-		std::cout << std::endl << std::endl << YELLOW << " *** RobotomyRequestForm *** " << NC << std::endl << std::endl;
+		std::cout << std::endl << std::endl << YELLOW << " *** PresidentialPardonForm *** " << NC << std::endl << std::endl;
 
 	a.setGrade(30);
 	b.setGrade(10);

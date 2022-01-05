@@ -55,7 +55,7 @@ Bureaucrat	&Bureaucrat::operator=( Bureaucrat const & rhs )
 {
 	//std::cout << "Bureaucrat: Assignment's overload called" << std::endl;
 	if (this != &rhs)
-		*this = Bureaucrat(rhs);
+		*this = rhs;
 	return ( *this );
 }
 
