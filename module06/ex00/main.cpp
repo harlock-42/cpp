@@ -10,5 +10,7 @@ int		main( int argc, char **argv )
 	std::string str = argv[1];
 	Convert	cvt = Convert((std::string)str);
 	cvt.print();
+
+
 	return (0);
 }

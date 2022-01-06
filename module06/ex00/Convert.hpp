@@ -8,18 +8,21 @@
 # include <sstream>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits>
+# include "math.h"
 
 class Convert
 {
 	private:
 
 		std::string	const	_str;
-		bool				_isChar;
 		
 		char				_char;
 		int					_int;
 		float				_float;
 		double				_double;
+		bool				_intImp;
+		bool				_charImp;
 
 	public:
 
@@ -33,9 +36,19 @@ class Convert
 
 		// Getter
 
+		std::string	const	getStr( void ) const;
+		char				getChar( void ) const;
+		int					getInt( void ) const;
+		float				getFloat( void ) const;
+		double				getDouble( void ) const;
+		bool				getIntImp( void ) const;
+		bool				getCharImp( void ) const;
+
 		// Setter
 
 		// Action Methods
+
+		std::string	uppercase( std::string str ) const;
 
 		void	checkInput( std::string const str );
 
