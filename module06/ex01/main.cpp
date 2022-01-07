@@ -2,27 +2,29 @@
 #include <iostream>
 #include <stdint.h>
 
-class Data {};
-
-uintptr_t	f(Data *data)
+typedef	struct	s_data
 {
-	void	*value = static_cast<void *>(data);
-	return (reinterpret_cast<uintptr_t>(value));
+	int		value;
+}				t_data;
+
+uintptr_t	serialize(t_data *data)
+{
+	return (reinterpret_cast<uintptr_t>(data));
 }
 
-Data		*deserialize( uintptr_t raw )
+t_data		*deserialize( uintptr_t raw )
 {
-	return (reinterpret_cast<Data *>(raw));
+	return (reinterpret_cast<t_data *>(raw));
 }
 
 int		main(void)
 {
-	Data *data = new Data();
-	std::cout << &data << std::endl;
-	uintptr_t a = f(data);
-	std::cout << a << std::endl;
-	Data *data2 = deserialize(a);
-	std::cout << data2 << std::endl;
-	// data
+	t_data	*data = new t_data;
+	data->value = 42;
+	std::cout << "addr = " << data << std::endl;
+	uintptr_t	serialize_data = serialize(data);
+	std::cout << "addr uint = " << serialize_data << std::endl;
+	t_data	*deserialize_data = deserialize(serialize_data);
+	std::cout << "addr = " << deserialize_data << std::endl;
 	return (0);
 }
