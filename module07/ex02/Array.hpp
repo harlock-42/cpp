@@ -10,16 +10,13 @@ class Array
 	private:
 
 		T				*_array;
-		unsigned	int	_size;
+		unsigned		int	_size;
 
 	public:
 
-		Array( void ) : _array( new T[0] )
-		{
-			return ;
-		}
-
-		Array( unsigned int i = 0 ) : _array( new T[i] ), _size(i)
+		// Constructor by argument and by default because the argument is initialized.
+		
+		Array( unsigned int i = 0) : _array( new T[i] ), _size(i)
 		{
 			for (size_t i = 0; i < this->getSize(); ++i)
 			{
@@ -35,6 +32,8 @@ class Array
 			for (size_t i = 0; i < rhs.getSize(); ++i)
 				this->_array[i] = rhs[i];
 		}
+
+		// destructor
 
 		~Array( void )
 		{
