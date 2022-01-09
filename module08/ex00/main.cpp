@@ -1,16 +1,27 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <array>
+
+#include "easyfind.hpp"
+
+
 
 int		main(void)
 {
 	std::vector<int>	intVec(5);
-	std::array<int, 5>		intArr;
+	for (std::vector<int>::iterator it = intVec.begin(); it != intVec.end(); ++it)
+		*it = *it + 1;
+	
+	std::list<int>	intlst(5);
+	for (std::list<int>::iterator it = intlst.begin(); it != intlst.end(); ++it)
+		*it = *it + 1;
 
-	for (size_t i = intVec.begin(); ; ++i)
-		std::cout << intVec[i] << std::endl;
-	for (size_t i = 0; i < 5; ++i)
-		std::cout << intArr[i] << std::endl;
+	try
+	{
+		std::cout << *easyfind(intVec, 1) << std::endl;
+		std::cout << *easyfind(intlst, 0) << std::endl;
+		
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return (0);
 }
