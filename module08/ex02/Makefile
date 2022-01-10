@@ -6,11 +6,11 @@
 #    By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 10:45:35 by tallaire          #+#    #+#              #
-#    Updated: 2021/12/29 15:36:30 by tallaire         ###   ########.fr        #
+#    Updated: 2022/01/10 19:38:58 by tallaire         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = template
+NAME = mutantstack
 
 CC = clang++
 
@@ -18,6 +18,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_DIR = ./
 SRCS +=		main.cpp
+SRCS +=		mutantstack.cpp
 
 
 OBJS_DIR 	= 	.obj/
