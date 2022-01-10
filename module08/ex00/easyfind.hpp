@@ -16,6 +16,7 @@ class valueNotFoundException : public std::exception
 		return ("Error: Value not found");;
 	}
 };
+
 template <typename T>
 
 typename	T::iterator		easyfind( T iter, int nb )

@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = template
 
 CC = clang++
 
@@ -18,6 +18,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_DIR = ./
 SRCS +=		main.cpp
+SRCS +=		span.cpp
 
 
 OBJS_DIR 	= 	.obj/
